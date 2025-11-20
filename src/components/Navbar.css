@@ -1,0 +1,215 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    padding: 1rem 0;
+    background: transparent;
+}
+
+.navbar.scrolled {
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+@media (min-width: 1600px) {
+    .navbar-container {
+        max-width: 1600px;
+        padding: 0 4rem;
+    }
+
+    .navbar-desktop {
+        gap: 2.5rem;
+    }
+}
+
+.navbar-logo-link {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+.navbar-logo-img {
+    height: 50px;
+    width: 150px;
+    object-fit: contain;
+}
+
+.navbar-desktop {
+    display: flex;
+    gap: 2rem;
+    margin-left: auto;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--color-text-muted);
+    font-weight: 500;
+    transition: color 0.2s;
+    font-size: 0.95rem;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.nav-link:hover {
+    color: var(--color-primary);
+}
+
+/* Dropdown */
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.dropdown-icon {
+    font-size: 0.7rem;
+    transition: transform 0.2s;
+}
+
+.nav-dropdown:hover .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0.5rem;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    padding: 0.5rem 0;
+    min-width: 150px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.dropdown-link {
+    display: block;
+    padding: 0.7rem 1.5rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.dropdown-link:hover {
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--color-primary);
+}
+
+/* Contact Button - Outline Style */
+.nav-contact-btn {
+    background: transparent;
+    color: var(--color-primary) !important;
+    border: 2px solid var(--color-primary);
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-contact-btn:hover {
+    background: rgba(139, 92, 246, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+}
+
+/* Mobile */
+.navbar-mobile-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--color-text);
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.navbar-mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--color-bg);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.mobile-nav-link {
+    color: var(--color-text);
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+}
+
+.mobile-divider {
+    height: 1px;
+    background: var(--glass-border);
+    margin: 0.5rem 0;
+}
+
+.mobile-contact-btn {
+    background: transparent;
+    color: var(--color-primary) !important;
+    border: 2px solid var(--color-primary);
+    padding: 1rem;
+    border-radius: 50px;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.mobile-contact-btn:hover {
+    background: rgba(139, 92, 246, 0.1);
+}
+
+@media (max-width: 968px) {
+    .navbar-container {
+        padding: 0 1.5rem;
+    }
+
+    .navbar-desktop {
+        display: none;
+    }
+
+    .navbar-mobile-toggle {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-container {
+        padding: 0 1rem;
+    }
+
+    .navbar-logo-img {
+        height: 40px;
+        width: 120px;
+    }
+}
